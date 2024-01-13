@@ -7,6 +7,7 @@ let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
+// Maybe make all lower case and when checking their answer use the toLowerCase method?
 let candidateAnswer = "";
 
 
@@ -31,11 +32,19 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  if (candidateAnswer === correctAnswer){
+  
+
+  if (candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()){
+    console.log("That's correct!");
+  } else {
+    console.log("Sorry, that's incorrect.");
+  }
+// OLD CODE
+ /* if (candidateAnswer === correctAnswer){
     console.log("correct!");
  } else {
   console.log ("incorrect");
- }
+ }*/
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
