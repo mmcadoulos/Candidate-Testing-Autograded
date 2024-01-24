@@ -46,26 +46,21 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-   for (i = 0; i < correctAnswers.length; i++){
-    console.log(`Question ${i}: You answered "${candidateAnswers[i]}"\nThe correct answer is "${correctAnswers[i]}"`);
+  for (i = 0; i < correctAnswers.length; i++){
+    console.log(`Question ${i}: You answered "${candidateAnswers[i]}"------The correct answer is "${correctAnswers[i]}"`);
    }
-
-  // if (candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()){
-  //   console.log("That's correct!");
-  // } else {
-  //   console.log("Sorry, that's incorrect.");
-  // }
-// OLD CODE
- /* if (candidateAnswer === correctAnswer){
-    console.log("correct!");
- } else {
-  console.log ("incorrect");
- }*/
-
-
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
-
+  let grade = 0;  //TODO 3.2 use this variable to calculate the candidates score.
+  for (j = 0; j < correctAnswers.length; j++){
+      if (candidateAnswers[j].toLowerCase() === correctAnswers[j].toLowerCase()){
+      grade ++;
+    }
+  }  
+  grade = grade / questions.length * 100;  
+  if (grade >= 80){
+    console.log(`You scored a passing grade of ${grade}%!`);
+  } else {
+    console.log(`You scored a failing grade of ${grade}%. Better study harder!`);
+  }
   return grade;
 }
 
